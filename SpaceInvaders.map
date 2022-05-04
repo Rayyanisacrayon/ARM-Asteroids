@@ -1,0 +1,461 @@
+Component: ARM Compiler 5.06 update 7 (build 960) Tool: armlink [4d3601]
+
+==============================================================================
+
+Section Cross References
+
+    startup.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(RESET) refers to startup.o(STACK) for StackMem
+    startup.o(RESET) refers to edgetrigger.o(i.GPIOPortE_Handler) for GPIOPortE_Handler
+    startup.o(RESET) refers to game.o(i.Timer0A_Handler) for Timer0A_Handler
+    startup.o(RESET) refers to timer2.o(i.Timer2A_Handler) for Timer2A_Handler
+    startup.o(RESET) refers to timer3.o(i.Timer3A_Handler) for Timer3A_Handler
+    startup.o(RESET) refers to texas.o(i.Timer5A_Handler) for Timer5A_Handler
+    startup.o(RESET) refers to __main.o(!!!main) for __main
+    startup.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup.o(.text) refers to startup.o(HEAP) for HeapMem
+    startup.o(.text) refers to startup.o(STACK) for StackMem
+    random.o(.text) refers to random.o(DATA) for M
+    adc.o(i.ADC_Init) refers to adc.o(.data) for delay
+    sound.o(i.Sound_Init) refers to dac.o(i.DAC_Init) for DAC_Init
+    sound.o(i.playsample) refers to dac.o(i.DAC_Out) for DAC_Out
+    sound.o(i.playsample) refers to timer2.o(i.Timer2A_Stop) for Timer2A_Stop
+    sound.o(i.playsample) refers to sound.o(.data) for sounds
+    sound.o(i.playsound) refers to timer2.o(i.Timer2_Init) for Timer2_Init
+    sound.o(i.playsound) refers to sound.o(.data) for sound2play
+    sound.o(i.playsound) refers to sound.o(i.playsample) for playsample
+    sound.o(.data) refers to sound.o(.constdata) for shoot
+    print.o(.text) refers (Special) to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    print.o(.text) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.Output_Clear) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Color) refers to st7735.o(i.ST7735_SetTextColor) for ST7735_SetTextColor
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_InitR) for ST7735_InitR
+    st7735.o(i.Output_Init) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.Output_Off) refers to st7735.o(i.Output_Clear) for Output_Clear
+    st7735.o(i.Output_On) refers to st7735.o(i.Output_Init) for Output_Init
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawBitmap) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawBitmap) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawBitmapWithRotation) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawBitmapWithRotation) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawBitmapWithRotation) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawChar) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawCharS) refers to st7735.o(.constdata) for Font
+    st7735.o(i.ST7735_DrawCircle) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawCircle) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawCircle) refers to st7735.o(i.deselect) for deselect
+    st7735.o(i.ST7735_DrawCircle) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawCircle) refers to st7735.o(.constdata) for circle
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastHLine) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawFastHLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawFastVLine) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawFastVLine) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(i.pushColor) for pushColor
+    st7735.o(i.ST7735_DrawPixel) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawSmallCircle) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_DrawSmallCircle) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_DrawSmallCircle) refers to st7735.o(i.deselect) for deselect
+    st7735.o(i.ST7735_DrawSmallCircle) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_DrawSmallCircle) refers to st7735.o(.constdata) for smallCircle
+    st7735.o(i.ST7735_DrawString) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(i.setAddrWindow) for setAddrWindow
+    st7735.o(i.ST7735_FillRect) refers to lcd.o(.text) for writedata
+    st7735.o(i.ST7735_FillRect) refers to st7735.o(.data) for _width
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_FillScreen) refers to st7735.o(.data) for _height
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitB) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.constdata) for Bcmd
+    st7735.o(i.ST7735_InitB) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commonInit) for commonInit
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.ST7735_InitR) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    st7735.o(i.ST7735_InitR) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.constdata) for Rcmd1
+    st7735.o(i.ST7735_InitR) refers to st7735.o(.data) for ColStart
+    st7735.o(i.ST7735_InvertDisplay) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutChar) refers to st7735.o(.data) for StY
+    st7735.o(i.ST7735_OutString) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.fillmessage) for fillmessage
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawString) for ST7735_DrawString
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(i.ST7735_DrawCharS) for ST7735_DrawCharS
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.ST7735_OutUDec) refers to st7735.o(.bss) for Message
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotBar) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    st7735.o(i.ST7735_PlotClear) refers to st7735.o(.data) for Ymax
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotLine) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotNext) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_Color565) for ST7735_Color565
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotNextErase) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoint) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(i.ST7735_DrawPixel) for ST7735_DrawPixel
+    st7735.o(i.ST7735_PlotPoints) refers to st7735.o(.data) for Ymin
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(i.ST7735_DrawFastVLine) for ST7735_DrawFastVLine
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.constdata) for dBfs
+    st7735.o(i.ST7735_PlotdBfs) refers to st7735.o(.data) for X
+    st7735.o(i.ST7735_SetCursor) refers to st7735.o(.data) for StX
+    st7735.o(i.ST7735_SetRotation) refers to lcd.o(.text) for writecommand
+    st7735.o(i.ST7735_SetRotation) refers to st7735.o(.data) for Rotation
+    st7735.o(i.ST7735_SetTextColor) refers to st7735.o(.data) for StTextColor
+    st7735.o(i.commandList) refers to lcd.o(.text) for writecommand
+    st7735.o(i.commandList) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.Delay1ms) for Delay1ms
+    st7735.o(i.commonInit) refers to st7735.o(i.commandList) for commandList
+    st7735.o(i.commonInit) refers to st7735.o(.data) for RowStart
+    st7735.o(i.fillmessage) refers to st7735.o(.bss) for Message
+    st7735.o(i.fillmessage) refers to st7735.o(.data) for Messageindex
+    st7735.o(i.fputc) refers to st7735.o(i.ST7735_OutChar) for ST7735_OutChar
+    st7735.o(i.pushColor) refers to lcd.o(.text) for writedata
+    st7735.o(i.setAddrWindow) refers to lcd.o(.text) for writecommand
+    st7735.o(i.setAddrWindow) refers to st7735.o(.data) for ColStart
+    texas.o(i.PeriodicTask2_Init) refers to texas.o(.data) for PeriodicTask2
+    texas.o(i.TExaS_Init) refers to startup.o(.text) for DisableInterrupts
+    texas.o(i.TExaS_Init) refers to pll.o(i.PLL_Init) for PLL_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.UART0_Init) for UART0_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.PeriodicTask2_Init) for PeriodicTask2_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.ADC1_Init) for ADC1_Init
+    texas.o(i.TExaS_Init) refers to texas.o(i.LogicAnalyzerA) for LogicAnalyzerA
+    texas.o(i.TExaS_Init) refers to texas.o(i.LogicAnalyzerB) for LogicAnalyzerB
+    texas.o(i.TExaS_Init) refers to texas.o(i.LogicAnalyzerC) for LogicAnalyzerC
+    texas.o(i.TExaS_Init) refers to texas.o(i.LogicAnalyzerE) for LogicAnalyzerE
+    texas.o(i.TExaS_Init) refers to texas.o(i.LogicAnalyzerF) for LogicAnalyzerF
+    texas.o(i.TExaS_Init) refers to texas.o(i.Scope) for Scope
+    texas.o(i.TExaS_Stop) refers to texas.o(i.PeriodicTask2_Stop) for PeriodicTask2_Stop
+    texas.o(i.Timer5A_Handler) refers to texas.o(.data) for PeriodicTask2
+    texas.o(i.UART0_OutString) refers to texas.o(i.UART0_OutChar) for UART0_OutChar
+    menu.o(i.LanguageMenu) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    menu.o(i.LanguageMenu) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    menu.o(i.LanguageMenu) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    menu.o(i.LanguageMenu) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    menu.o(i.LanguageMenu) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    menu.o(i.LanguageMenu) refers to menu.o(i.MenuInit) for MenuInit
+    menu.o(i.LanguageMenu) refers to menu.o(.data) for langoption
+    menu.o(i.LanguageMenu) refers to images.o(.constdata) for p1ship0d
+    menu.o(i.LanguageMenu) refers to edgetrigger.o(.data) for btnBehavior
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_DrawChar) for ST7735_DrawChar
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_SetTextColor) for ST7735_SetTextColor
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    menu.o(i.MenuInit) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    menu.o(i.MenuInit) refers to edgetrigger.o(i.EdgeTrigger_Init) for EdgeTrigger_Init
+    menu.o(i.MenuInit) refers to menu.o(i.MenuLoop) for MenuLoop
+    menu.o(i.MenuInit) refers to menu.o(.data) for Phrases
+    menu.o(i.MenuInit) refers to images.o(.constdata) for logo
+    menu.o(i.MenuInit) refers to edgetrigger.o(.data) for btnBehavior
+    menu.o(i.MenuLoop) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    menu.o(i.MenuLoop) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    menu.o(i.MenuLoop) refers to game.o(i.GameInit) for GameInit
+    menu.o(i.MenuLoop) refers to menu.o(i.LanguageMenu) for LanguageMenu
+    menu.o(i.MenuLoop) refers to menu.o(.data) for mainmenu
+    menu.o(i.MenuLoop) refers to images.o(.constdata) for p1ship0d
+    menu.o(i.MenuLoop) refers to edgetrigger.o(.data) for btnBehavior
+    menu.o(.data) refers to menu.o(.constdata) for Welcome_English
+    edgetrigger.o(i.EdgeTrigger_Init) refers to startup.o(.text) for EnableInterrupts
+    edgetrigger.o(i.GPIOPortE_Handler) refers to edgetrigger.o(i.PE0Handler) for PE0Handler
+    edgetrigger.o(i.GPIOPortE_Handler) refers to edgetrigger.o(i.PE1Handler) for PE1Handler
+    edgetrigger.o(i.GPIOPortE_Handler) refers to edgetrigger.o(i.PE2Handler) for PE2Handler
+    edgetrigger.o(i.GPIOPortE_Handler) refers to edgetrigger.o(i.PE3Handler) for PE3Handler
+    edgetrigger.o(i.GPIOPortE_Handler) refers to random.o(.text) for Random_Init
+    edgetrigger.o(i.GPIOPortE_Handler) refers to edgetrigger.o(.data) for first
+    edgetrigger.o(i.PE0Handler) refers to edgetrigger.o(.data) for btnBehavior
+    edgetrigger.o(i.PE0Handler) refers to menu.o(.data) for mainmenu
+    edgetrigger.o(i.PE0Handler) refers to sprites.o(.data) for shipAcc
+    edgetrigger.o(i.PE1Handler) refers to sound.o(i.playsound) for playsound
+    edgetrigger.o(i.PE1Handler) refers to sprites.o(i.fireLaser) for fireLaser
+    edgetrigger.o(i.PE1Handler) refers to edgetrigger.o(.data) for btnBehavior
+    edgetrigger.o(i.PE1Handler) refers to menu.o(.data) for confirm
+    edgetrigger.o(i.PE2Handler) refers to edgetrigger.o(i.togglePause) for togglePause
+    edgetrigger.o(i.PE2Handler) refers to edgetrigger.o(.data) for btnBehavior
+    edgetrigger.o(i.PE2Handler) refers to menu.o(.data) for mainmenu
+    edgetrigger.o(i.togglePause) refers to edgetrigger.o(.data) for btnBehavior
+    timer2.o(i.Timer2A_Handler) refers to timer2.o(.data) for PeriodicTask
+    timer2.o(i.Timer2_Init) refers to timer2.o(.data) for PeriodicTask
+    game.o(i.GameInit) refers to startup.o(.text) for DisableInterrupts
+    game.o(i.GameInit) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    game.o(i.GameInit) refers to st7735.o(i.ST7735_DrawChar) for ST7735_DrawChar
+    game.o(i.GameInit) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    game.o(i.GameInit) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    game.o(i.GameInit) refers to timer0.o(i.Timer0_Init) for Timer0_Init
+    game.o(i.GameInit) refers to timer1.o(i.Timer1_Init) for Timer1_Init
+    game.o(i.GameInit) refers to timer3.o(i.Timer3_Init) for Timer3_Init
+    game.o(i.GameInit) refers to game.o(i.GameLoop) for GameLoop
+    game.o(i.GameInit) refers to game.o(.data) for gPhrases
+    game.o(i.GameInit) refers to menu.o(.data) for myLanguage
+    game.o(i.GameInit) refers to edgetrigger.o(.data) for btnBehavior
+    game.o(i.GameInit) refers to sprites.o(i.spawnNextAsteroid) for spawnNextAsteroid
+    game.o(i.GameLoop) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    game.o(i.GameLoop) refers to st7735.o(i.ST7735_OutUDec) for ST7735_OutUDec
+    game.o(i.GameLoop) refers to game.o(i.victory) for victory
+    game.o(i.GameLoop) refers to game.o(.data) for refresh
+    game.o(i.Timer0A_Handler) refers to game.o(.data) for nsecs
+    game.o(i.gameover) refers to startup.o(.text) for DisableInterrupts
+    game.o(i.gameover) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    game.o(i.gameover) refers to st7735.o(i.ST7735_DrawChar) for ST7735_DrawChar
+    game.o(i.gameover) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    game.o(i.gameover) refers to st7735.o(i.ST7735_OutUDec) for ST7735_OutUDec
+    game.o(i.gameover) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    game.o(i.gameover) refers to game.o(.data) for gPhrases
+    game.o(i.gameover) refers to menu.o(.data) for myLanguage
+    game.o(i.victory) refers to startup.o(.text) for DisableInterrupts
+    game.o(i.victory) refers to st7735.o(i.ST7735_FillScreen) for ST7735_FillScreen
+    game.o(i.victory) refers to st7735.o(i.ST7735_DrawChar) for ST7735_DrawChar
+    game.o(i.victory) refers to st7735.o(i.ST7735_SetCursor) for ST7735_SetCursor
+    game.o(i.victory) refers to st7735.o(i.ST7735_OutUDec) for ST7735_OutUDec
+    game.o(i.victory) refers to st7735.o(i.ST7735_OutString) for ST7735_OutString
+    game.o(i.victory) refers to game.o(.data) for gPhrases
+    game.o(i.victory) refers to menu.o(.data) for myLanguage
+    game.o(.data) refers to game.o(.constdata) for win_English
+    game.o(.data) refers to game.o(.conststring) for .conststring
+    sprites.o(i.checkCollision) refers to sound.o(i.playsound) for playsound
+    sprites.o(i.checkCollision) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    sprites.o(i.checkCollision) refers to sprites.o(.data) for asteroids
+    sprites.o(i.checkCollision) refers to game.o(i.gameover) for gameover
+    sprites.o(i.fireLaser) refers to sprites.o(.data) for lasers
+    sprites.o(i.moveAsteroids) refers to sprites.o(i.vbmove_asteroid) for vbmove_asteroid
+    sprites.o(i.moveAsteroids) refers to sprites.o(.data) for asteroids
+    sprites.o(i.moveLasers) refers to sprites.o(i.vbmove_laser) for vbmove_laser
+    sprites.o(i.moveLasers) refers to sprites.o(.data) for lasers
+    sprites.o(i.shipAccelerate) refers to sprites.o(.data) for shipAcc
+    sprites.o(i.shipRotationUpdate) refers to adc.o(i.ADC_In) for ADC_In
+    sprites.o(i.shipRotationUpdate) refers to sprites.o(i.Convert) for Convert
+    sprites.o(i.spawnNextAsteroid) refers to random.o(.text) for Random
+    sprites.o(i.spawnNextAsteroid) refers to sprites.o(.data) for count
+    sprites.o(i.spawnNextAsteroid) refers to sprites.o(.constdata) for spawnPointsTop
+    sprites.o(i.spawnNextAsteroid) refers to images.o(.constdata) for smallAsteroidRotSet
+    sprites.o(i.vbmove) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    sprites.o(i.vbmove) refers to st7735.o(i.ST7735_DrawBitmapWithRotation) for ST7735_DrawBitmapWithRotation
+    sprites.o(i.vbmove) refers to sprites.o(.data) for cos
+    sprites.o(i.vbmove_asteroid) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    sprites.o(i.vbmove_asteroid) refers to st7735.o(i.ST7735_DrawBitmapWithRotation) for ST7735_DrawBitmapWithRotation
+    sprites.o(i.vbmove_asteroid) refers to sprites.o(.constdata) for cos
+    sprites.o(i.vbmove_laser) refers to st7735.o(i.ST7735_FillRect) for ST7735_FillRect
+    sprites.o(i.vbmove_laser) refers to st7735.o(i.ST7735_DrawBitmap) for ST7735_DrawBitmap
+    sprites.o(i.vbmove_laser) refers to sprites.o(.constdata) for cos
+    sprites.o(.data) refers to images.o(.constdata) for p1shipRotSet
+    timer3.o(i.Timer3A_Handler) refers to timer3.o(.data) for Spawn
+    timer3.o(i.Timer3_Init) refers to timer3.o(.data) for Spawn
+    systickints.o(i.SysTick_Init) refers to startup.o(.text) for StartCritical
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000027) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to _get_argv_nomalloc.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_fini_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000009) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000011) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000012) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000006) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000E) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing adc.o(i.ADC_In), (44 bytes).
+    Removing adc.o(i.ADC_Init), (236 bytes).
+    Removing adc.o(.data), (4 bytes).
+    Removing timer0.o(i.Timer0_Init), (96 bytes).
+    Removing timer1.o(i.Timer1_Init), (96 bytes).
+    Removing sound.o(i.Sound_Init), (8 bytes).
+    Removing lcd.o(.text), (96 bytes).
+    Removing print.o(.text), (316 bytes).
+    Removing st7735.o(i.Delay1ms), (32 bytes).
+    Removing st7735.o(i.Output_Clear), (10 bytes).
+    Removing st7735.o(i.Output_Color), (12 bytes).
+    Removing st7735.o(i.Output_Init), (16 bytes).
+    Removing st7735.o(i.Output_Off), (8 bytes).
+    Removing st7735.o(i.Output_On), (8 bytes).
+    Removing st7735.o(i.ST7735_Color565), (24 bytes).
+    Removing st7735.o(i.ST7735_DrawBitmap), (288 bytes).
+    Removing st7735.o(i.ST7735_DrawBitmapWithRotation), (520 bytes).
+    Removing st7735.o(i.ST7735_DrawChar), (272 bytes).
+    Removing st7735.o(i.ST7735_DrawCharS), (248 bytes).
+    Removing st7735.o(i.ST7735_DrawCircle), (172 bytes).
+    Removing st7735.o(i.ST7735_DrawFastHLine), (124 bytes).
+    Removing st7735.o(i.ST7735_DrawFastVLine), (124 bytes).
+    Removing st7735.o(i.ST7735_DrawPixel), (72 bytes).
+    Removing st7735.o(i.ST7735_DrawSmallCircle), (172 bytes).
+    Removing st7735.o(i.ST7735_DrawString), (84 bytes).
+    Removing st7735.o(i.ST7735_FillRect), (172 bytes).
+    Removing st7735.o(i.ST7735_FillScreen), (36 bytes).
+    Removing st7735.o(i.ST7735_InitB), (40 bytes).
+    Removing st7735.o(i.ST7735_InitR), (124 bytes).
+    Removing st7735.o(i.ST7735_InvertDisplay), (22 bytes).
+    Removing st7735.o(i.ST7735_OutChar), (216 bytes).
+    Removing st7735.o(i.ST7735_OutString), (22 bytes).
+    Removing st7735.o(i.ST7735_OutUDec), (140 bytes).
+    Removing st7735.o(i.ST7735_PlotBar), (88 bytes).
+    Removing st7735.o(i.ST7735_PlotClear), (92 bytes).
+    Removing st7735.o(i.ST7735_PlotLine), (264 bytes).
+    Removing st7735.o(i.ST7735_PlotNext), (32 bytes).
+    Removing st7735.o(i.ST7735_PlotNextErase), (64 bytes).
+    Removing st7735.o(i.ST7735_PlotPoint), (152 bytes).
+    Removing st7735.o(i.ST7735_PlotPoints), (172 bytes).
+    Removing st7735.o(i.ST7735_PlotdBfs), (60 bytes).
+    Removing st7735.o(i.ST7735_SetCursor), (32 bytes).
+    Removing st7735.o(i.ST7735_SetRotation), (212 bytes).
+    Removing st7735.o(i.ST7735_SetTextColor), (12 bytes).
+    Removing st7735.o(i.ST7735_SwapColor), (18 bytes).
+    Removing st7735.o(i.commandList), (86 bytes).
+    Removing st7735.o(i.commonInit), (392 bytes).
+    Removing st7735.o(i.deselect), (28 bytes).
+    Removing st7735.o(i.ferror), (8 bytes).
+    Removing st7735.o(i.fgetc), (6 bytes).
+    Removing st7735.o(i.fillmessage), (72 bytes).
+    Removing st7735.o(i.fputc), (16 bytes).
+    Removing st7735.o(i.pushColor), (18 bytes).
+    Removing st7735.o(i.setAddrWindow), (116 bytes).
+    Removing st7735.o(.bss), (12 bytes).
+    Removing st7735.o(.constdata), (2114 bytes).
+    Removing st7735.o(.data), (44 bytes).
+    Removing texas.o(i.ADC1_Init), (200 bytes).
+    Removing texas.o(i.LogicAnalyzerA), (24 bytes).
+    Removing texas.o(i.LogicAnalyzerB), (24 bytes).
+    Removing texas.o(i.LogicAnalyzerC), (24 bytes).
+    Removing texas.o(i.LogicAnalyzerE), (24 bytes).
+    Removing texas.o(i.LogicAnalyzerF), (24 bytes).
+    Removing texas.o(i.PeriodicTask2_Init), (148 bytes).
+    Removing texas.o(i.PeriodicTask2_Stop), (36 bytes).
+    Removing texas.o(i.Scope), (20 bytes).
+    Removing texas.o(i.TExaS_Init), (248 bytes).
+    Removing texas.o(i.TExaS_Stop), (8 bytes).
+    Removing texas.o(i.UART0_InChar), (28 bytes).
+    Removing texas.o(i.UART0_Init), (136 bytes).
+    Removing texas.o(i.UART0_OutChar), (24 bytes).
+    Removing texas.o(i.UART0_OutString), (22 bytes).
+    Removing pll.o(i.PLL_Init), (124 bytes).
+    Removing menu.o(i.LanguageMenu), (208 bytes).
+    Removing menu.o(i.MenuInit), (276 bytes).
+    Removing menu.o(i.MenuLoop), (244 bytes).
+    Removing edgetrigger.o(i.EdgeTrigger_Init), (160 bytes).
+    Removing game.o(i.GameInit), (236 bytes).
+    Removing game.o(i.GameLoop), (56 bytes).
+    Removing game.o(i.gameover), (348 bytes).
+    Removing game.o(i.victory), (260 bytes).
+    Removing sprites.o(i.Convert), (20 bytes).
+    Removing sprites.o(i.checkCollision), (1344 bytes).
+    Removing sprites.o(i.moveAsteroids), (60 bytes).
+    Removing sprites.o(i.moveLasers), (72 bytes).
+    Removing sprites.o(i.shipAccelerate), (48 bytes).
+    Removing sprites.o(i.shipDeccelerate), (22 bytes).
+    Removing sprites.o(i.shipRotationUpdate), (158 bytes).
+    Removing sprites.o(i.spawnNextAsteroid), (1100 bytes).
+    Removing sprites.o(i.vbmove), (748 bytes).
+    Removing sprites.o(i.vbmove_asteroid), (620 bytes).
+    Removing sprites.o(i.vbmove_laser), (588 bytes).
+    Removing sprites.o(.constdata), (208 bytes).
+    Removing dac.o(i.DAC_Init), (68 bytes).
+    Removing timer3.o(i.Timer3_Init), (92 bytes).
+    Removing systickints.o(i.SysTick_Init), (64 bytes).
+
+96 unused section(s) (total 16078 bytes) removed from the image.
